@@ -8,7 +8,8 @@ Gem::Specification.new do |s|
 	s.email					= 'fricke9523@msn.com'
 	s.files					= ['lib/kele.rb']
 	s.require_paths	= ["lib"]
-	s.homepage			= 'http://rubygems.org/gems/kele'
+	s.homepage			= 
+		'http://rubygems.org/gems/kele'
 	s.license				= 'MIT'
 	s.add_runtime_dependency 'httparty', '~> 0.13'
 end
