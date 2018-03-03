@@ -8,8 +8,15 @@ module Messaging
 		JSON.parse(response.body)
 	end
 
-	def create_message()
-
+	def create_message(sender_email, recipient_id, subject, body)
+		response = self.class.post(base_api_url("messages"), 
+		body: { 
+			"sender": sender_email,
+			"recipient_id": recipient_id,
+			"subject": subject,
+			"stripped-text": body 
+		}, 
+		headers: { "authorization" => @auth_token })
 	end
 end
 
