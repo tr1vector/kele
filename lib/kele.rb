@@ -18,12 +18,12 @@ class Kele
 
 	def get_me
 		response = self.class.get(base_api_url("users/me"), headers: { "authorization" => @auth_token })
-		JSON.parse(response.body)
+		@user = JSON.parse(response.body)
 	end
 
 	def get_mentor_availability(id)
 		response = self.class.get(base_api_url("mentors/#{id}/student_availability"), headers: { "authorization" => @auth_token })
-		JSON.parse(response.body)
+		@mentor = JSON.parse(response.body)
 	end
 
 	private

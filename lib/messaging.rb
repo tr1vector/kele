@@ -5,7 +5,7 @@ module Messaging
 		else
 			response = self.class.get(base_api_url("message_threads?page=#{page}"), headers: { "authorization" => @auth_token })
 		end
-		JSON.parse(response.body)
+		@messages = JSON.parse(response.body)
 	end
 
 	def create_message(sender_email, recipient_id, subject, body)
